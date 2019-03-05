@@ -1,8 +1,8 @@
-var words = ["thedarkknight", "gladiator", "findingnemo", "walle", "borat", "killbill", "inglouriousbasterds"]  //array for shows to guess
-var wordGuess = "";   //to get random show
-var wordLetters = []  //to split show and make an array of letters
-var underline = 0;    //to get the show blanks
-var wordBlank = [];   //to make the show blanks an array
+var words = ["thedarkknight", "gladiator", "findingnemo", "walle", "borat", "killbill", "inglouriousbasterds"]  //array for movies to guess
+var wordGuess = "";   //to get random movie
+var wordLetters = []  //to split movie and make an array of letters
+var underline = 0;    //to get the movie blanks
+var wordBlank = [];   //to make the movie blanks an array
 var wrong = [];       //to get array of wrong letters 
 var wins = 0;         //to hold amount of wins
 var losses = 0;       //to hold amount of losses
@@ -25,9 +25,10 @@ function reset() {   //function to reset game
     wrong = [];
     wordBlank = [];
     movie()         
+    document.getElementById("image").src = "assets/images/MovieTheater.jpg";  
 } //end function reset
 
-function checkLetters(letter) {   //to check letters against random show
+function checkLetters(letter) {   //to check letters against random movie
     var letterInWord = false;    
     for (var i = 0; i < underline; i++) {
         if (wordGuess[i] == letter) {
@@ -52,7 +53,7 @@ function checkLetters(letter) {   //to check letters against random show
 
 
 function complete() {    //function to reset after win or loss
-    if (wordLetters.toString() == wordBlank.toString()) {
+    if (wordLetters.toString() === wordBlank.toString()) {
         wins++;
         reset()        
         document.getElementById("winstracker").innerHTML = " " + wins;       
@@ -61,7 +62,7 @@ function complete() {    //function to reset after win or loss
     else if (guessesLeft === 0) {
         losses++;
         reset()
-        document.getElementById("image").src = ".assets/images/jollyRoger.jpg";                      
+        document.getElementById("image").src = "assets/images/jollyRoger.jpg";                      
         document.getElementById("losstracker").innerHTML = " " + losses;
     } //end else if 
     document.getElementById("currentword").innerHTML = "  " + wordBlank.join(" ");
@@ -76,3 +77,5 @@ document.onkeyup = function (event) {
     console.log(guesses);    
     document.getElementById("playerguesses").innerHTML = "  " + wrong.join(" ");
 }  //end onkeyup
+
+// need to fix issue where jollyroger doesn't go away
