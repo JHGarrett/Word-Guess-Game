@@ -55,14 +55,16 @@ function checkLetters(letter) {   //to check letters against random movie
 function complete() {    //function to reset after win or loss
     if (wordLetters.toString() === wordBlank.toString()) {
         wins++;
-        reset()        
+        reset()    
+        document.getElementById("image").src = "assets/images/goodjob.jpg";                      
+    
         document.getElementById("winstracker").innerHTML = " " + wins;       
     } //end if
 
     else if (guessesLeft === 0) {
         losses++;
         reset()
-        document.getElementById("image").src = "assets/images/jollyRoger.jpg";                      
+        document.getElementById("image").src = "assets/images/loser.jpg";                      
         document.getElementById("losstracker").innerHTML = " " + losses;
     } //end else if 
     document.getElementById("currentword").innerHTML = "  " + wordBlank.join(" ");
@@ -71,6 +73,8 @@ function complete() {    //function to reset after win or loss
 
 movie()  //to call game to start
 document.onkeyup = function (event) {
+    document.getElementById("image").src = "assets/images/MovieTheater.jpg";  
+
     var guesses = String.fromCharCode(event.keyCode).toLowerCase();    
     checkLetters(guesses);   
     complete();     

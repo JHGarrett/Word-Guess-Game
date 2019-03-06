@@ -1,0 +1,53 @@
+.jumbotron{           
+    font-size: 43px;
+    border: solid 5px #eece16;
+    background: #cfcfd1;
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right:20%;    
+    padding: 15px;
+    font-family: 'Lato', sans-serif;
+}
+
+body {               /* to style the body with back ground image*/
+    background-image: url("moviebackground.png");
+    width: 100%
+}
+
+.row{                /* to style the rows for content*/
+    background-color: white;
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right:20%;
+    padding: 15px;
+}
+
+h2 {                 /* to style the directions */
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    background-color: white;
+    margin-top: 0;
+    margin-left: 20%;
+    margin-right:20%;
+    padding-top: 10px;
+}
+
+#image{              /* to style the movie theater image */
+    margin: 0 auto; 
+    transition: all 5s ease-in-out;         
+}
+img{                 /* to set up the animation for theater image */
+    animation-duration: 2s;
+    animation-iteration-count: 3;
+    animation-name: rotate;      
+}
+@keyframes  rotate {   /* to rotate the theater image */
+    0% { transform: rotate(0deg)}
+    25% { transform: rotate(8deg)}
+    50% { transform: rotate(0deg)}
+    75% { transform: rotate(-8deg)}
+    100% { transform: rotate(0deg)}
+}
